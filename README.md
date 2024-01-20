@@ -30,3 +30,14 @@ Or
 ```
 MONGO_URI = mongodb+srv://<mongodbUserName>:<password>@cluster0.i7zl9ad.mongodb.net/?retryWrites=true&w=majority
 ```
+
+## NPM Packages
+**Express**
+**Mongoose**
+**shortid**
+
+## Authors
+Umut Kayretli
+- Website: umutkayretli.com
+- Linkedin: [@umutkayretli](https://www.linkedin.com/in/umutkayretli/)
+- Github: [@umutkayretli](https://github.com/umutkayretli)
