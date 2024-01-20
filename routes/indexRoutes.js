@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
   console.log('Received URL:', fullUrl);
 
   if (!fullUrl || fullUrl.trim() === '') {
-    return res.status(400).send('URL boş olamaz');
+    return res.status(400).send('URL cannot be empty');
   }
 
   // If URL doesn't start with http:// or https:// 
@@ -37,7 +37,7 @@ app.post('/', async (req, res) => {
     res.render('index', { urls, shortUrl: `${createdUrl.short}` });
   } catch (error) {
     console.error(error);
-    res.render('error', { errorMessage: 'URL kaydedilemedi' });
+    res.render('error', { errorMessage: 'URL could not save!' });
   }
 });
 
