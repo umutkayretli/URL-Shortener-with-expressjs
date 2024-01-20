@@ -2,7 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const ShortUrl = require('./model/urlModel');
 
 dotenv.config();
 const app = express();
