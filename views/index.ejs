@@ -52,8 +52,8 @@
                   <% urls.forEach(url => { %>
                     <tr>
                       <td><a href="<%=url.full %>"><%= url.full %></a></td>
-                      <td><a href="<%= `http://localhost:3000/${url.short}` %>"><%= `http://localhost:3000/${url.short}` %></a></td>
-                      <td><a href="<%=url.full %>" class="btn btn-primary btn-sm">Go to site</a></td>
+                      <td><a href="<%= `http://localhost:3000/${url.short}` %>"><%= `localhost:3000/${url.short}` %></a></td>
+                      <td><a href="<%= `http://localhost:3000/${url.short}` %>" class="btn btn-primary btn-sm">Go to site</a></td>
                     </tr>
                   <% }); %>
                 <% } else { %>

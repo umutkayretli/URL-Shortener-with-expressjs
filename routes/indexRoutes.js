@@ -24,8 +24,8 @@ app.post('/', async (req, res) => {
     return res.status(400).send('URL boş olamaz');
   }
 
-  // If input URL doesn't start with http:// 
-  if (!/^http?:\/\//i.test(fullUrl)) {
+  // If URL doesn't start with http:// or https:// 
+  if (!fullUrl.startsWith('http://') && !fullUrl.startsWith('https://')) {
     fullUrl = 'http://' + fullUrl;
   }
 
