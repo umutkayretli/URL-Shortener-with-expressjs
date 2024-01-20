@@ -16,7 +16,7 @@ app.get('/', async (req, res) => {
 
 
 app.post('/', async (req, res) => {
-  const fullUrl = req.body.url;
+  let fullUrl = req.body.url;
 
   console.log('Received URL:', fullUrl);
 
@@ -24,12 +24,17 @@ app.post('/', async (req, res) => {
     return res.status(400).send('URL boş olamaz');
   }
 
+  // If input URL doesn't start with http:// 
+  if (!/^http?:\/\//i.test(fullUrl)) {
+    fullUrl = 'http://' + fullUrl;
+  }
+
   const shortUrl = shortId.generate();
 
   try {
     const urls = await ShortUrl.find();
     const createdUrl = await ShortUrl.create({ full: fullUrl, short: shortUrl }); //full and short are collections of mongoDB
-    res.render('index', { urls, shortUrl: `http://localhost:3000/${createdUrl.short}` });
+    res.render('index', { urls, shortUrl: `${createdUrl.short}` });
   } catch (error) {
     console.error(error);
     res.render('error', { errorMessage: 'URL kaydedilemedi' });
